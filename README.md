@@ -1,6 +1,6 @@
 # ocamlfilt
 
-[![GitHub CI][github-shield]][github-ci]
+[![build](https://github.com/tmcgilchrist/ocamlfilt/actions/workflows/build.yml/badge.svg)](https://github.com/tmcgilchrist/ocamlfilt/actions/workflows/build.yml)
 
 Demangle OCaml symbol names. ocamlfilt works similarly to c++filt, in that it accepts mangled symbol names as command line arguments, and if none are provided it accepts mangled symbols from stdin. Demangled symbols are written to stdout.
 
@@ -32,7 +32,3 @@ Alternatively ocamlfilt can accept data from stdin and pipe to stdout:
 ``` shell
 curl http://example.com/mangled-symbols.txt | ocamlfilt | less
 ```
-
-
- [github-shield]: https://github.com/tmcgilchrist/ocamlfilt/actions/workflows/build.yaml/badge.svg
- [github-ci]: https://github.com/tmcgilchrist/ocamlfilt/actions/workflows/build.yaml
