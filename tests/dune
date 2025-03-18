@@ -1,0 +1,7 @@
+(test
+ (name tests)
+ (package ocamlfilt)
+ (libraries ocamlfilt alcotest)
+ (flags  ; Ignore unused code while hacking
+  (:standard -w -32))
+ (modules tests))

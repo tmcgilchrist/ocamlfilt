@@ -1,0 +1,6 @@
+(library
+ (name ocamlfilt)
+ (public_name ocamlfilt)
+ (flags  ; Ignore unused code while hacking
+  (:standard -w -32))
+ (modules demangle))

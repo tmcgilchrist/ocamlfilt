@@ -1,0 +1,5 @@
+(executable
+ (libraries ocamlfilt cmdliner)
+ (package ocamlfilt)
+ (public_name ocamlfilt)
+ (modules ocamlfilt))
