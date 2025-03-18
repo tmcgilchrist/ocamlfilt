@@ -3,7 +3,10 @@
 (name ocamlfilt)
 (generate_opam_files true)
 
-(license BSD3)
+(license BSD-3-Clause)
+(maintainers "Tim McGilchrist <timmcgil@gmail.com>")
+(authors "Tim McGilchrist <timmcgil@gmail.com>")
+(source (github  tmcgilchrist/ocamlfilt))
 
 (package
  (name ocamlfilt)

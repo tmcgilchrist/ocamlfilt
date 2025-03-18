@@ -3,7 +3,11 @@ opam-version: "2.0"
 synopsis: "Demangle OCaml symbol names"
 description:
   "OCaml implementation of demangling OCaml symbols. ocamlfilt works similarly to c++filt, in that it accepts mangled symbol names as command line arguments, and if none are provided it accepts mangled symbols from stdin. Demangled symbols are written to stdout."
-license: "BSD3"
+maintainer: ["Tim McGilchrist <timmcgil@gmail.com>"]
+authors: ["Tim McGilchrist <timmcgil@gmail.com>"]
+license: "BSD-3-Clause"
+homepage: "https://github.com/tmcgilchrist/ocamlfilt"
+bug-reports: "https://github.com/tmcgilchrist/ocamlfilt/issues"
 depends: [
   "dune" {>= "3.7"}
   "ocaml" {>= "4.14"}
@@ -25,3 +29,4 @@ build: [
     "@doc" {with-doc}
   ]
 ]
+dev-repo: "git+https://github.com/tmcgilchrist/ocamlfilt.git"
