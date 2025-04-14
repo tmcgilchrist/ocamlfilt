@@ -5,11 +5,22 @@ type demangle_format =
   | CPlusPlus (** Classic OCaml plus C++ GNU/Itanium style for anonymous functions *)
   | RunLength (** New style run length encoded OCaml identifiers *)
 
+let rec handle_stdin style () =
+  let line = In_channel.(input_line stdin) in
+  match (line, style ) with
+  | Some line, Classic ->
+    (Ocamlfilt.Demangle.demangle_classic_sym line
+      |> function | None -> () | Some s -> print_endline s; handle_stdin style ())
+  | Some line, Classic_5_4 ->
+    (Ocamlfilt.Demangle.demangle_classic_5_4_sym line
+      |> function | None -> () | Some s -> print_endline s; handle_stdin style ())
+  | _otherwise -> exit 0
+
 let main style symbols =
   let style = Option.value ~default:Classic style in
   match symbols with
   | [] ->
-     print_endline "Try reading from stdin"; exit 2
+    handle_stdin style ()
   | symbols when style == Classic ->
      List.iter (fun s ->
               Ocamlfilt.Demangle.demangle_classic_sym s
@@ -19,6 +30,7 @@ let main style symbols =
               Ocamlfilt.Demangle.demangle_classic_5_4_sym s
               |> function | None -> () | Some s -> print_endline s) symbols
   | _otherwise -> print_endline "Unimplemented"; exit 2
+
 
 open Cmdliner
 
