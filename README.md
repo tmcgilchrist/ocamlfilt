@@ -21,6 +21,13 @@ opam install ocamlfilt
 
 ## Usage
 
+To demangle names supplied on the command line (note surround symbols with quotes otherwise the shell will perform expansion):
+``` shell
+$ ocamlfilt.exe 'camlCmdliner_base.some$27_988' 'camlStdlib.$40_196'
+Cmdliner_base.some'_988
+Stdlib.@_196
+```
+
 To demangle a file run:
 
 ``` shell
