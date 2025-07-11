@@ -15,4 +15,5 @@
  (depends
   (ocaml (>= 4.14))
   (cmdliner (>= 1.3))
-  (alcotest :with-test)))
+  (alcotest (and :with-test (>= 1.9.0)))
+  (qcheck-alcotest (and :with-test (>= 0.25)))))
